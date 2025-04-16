@@ -1,4 +1,9 @@
-README.md: guessinggame.sh
+all: clean generate
+
+clean:
+	rm -f README.md index.md
+
+generate:
 	echo "---" > README.md
 	echo "title: Guessing Game Project" >> README.md
 	echo "date: $$(date '+%Y-%m-%d %H:%M:%S')" >> README.md
@@ -27,3 +32,4 @@ README.md: guessinggame.sh
 	echo "To satisfy this, an additional file called \`index.md\` was created as a copy of the generated README.md. This allows GitHub Pages to render the content properly." >> README.md
 	echo "" >> README.md
 	echo "This clarification ensures that the Pages site functions correctly while remaining faithful to the assignment's intent." >> README.md
+	cp README.md index.md
